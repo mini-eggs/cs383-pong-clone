@@ -7,6 +7,9 @@ public class Ball : MonoBehaviour {
   /* to let users ready up before ball starts to move */
   public int pauseTime;
 
+  /* speed at which ball spins */
+  public int spinSpeed;
+
   private Rigidbody2D body;
 
 	// Use this for initialization
@@ -20,7 +23,7 @@ public class Ball : MonoBehaviour {
 
   void Update() {
     /* spin the ball like a true mac beach ball! */
-    transform.Rotate(Vector3.forward * -20);
+    transform.Rotate(Vector3.forward * -1 * spinSpeed);
   }
 	
   void BeginRound() {
