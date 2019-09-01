@@ -71,9 +71,14 @@ BUILDING THE GAME
 HOW TO PLAY
 
 The game is first to five wins. There are two playes, the "Left Player" and the
+<<<<<<< HEAD:pong/README.txt
 "Right Player." The game begins with a help screen being shown, teaching each 
 player how to move their paddle. Once a game has been completed there is a 
 message to show who has won. There will also be a button that says "Play 
 Again!" if you wish to.
+=======
+"Right Player." Once a game has been completed there is a message to show who
+has won. There will also be a button that says "Play Again!" if you wish to.
+>>>>>>> fc649977f22a996442868f66417feedb0c5a3ad5:README.txt
 
 Enjoy!
