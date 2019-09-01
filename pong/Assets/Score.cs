@@ -65,19 +65,16 @@ public class Score : MonoBehaviour {
   void OnGUI() {
     if(hasStarted) {
       /* scores */
-      GUI.Label(new Rect(Screen.width / 2 - 140, 200, 150, 150), "Left Player: " + PlayerOneScore);
-      GUI.Label(new Rect(Screen.width / 2 + 50, 200, 150, 150), "Right Player: " + PlayerTwoScore);
-
-      /* directions */
-      GUI.Label(new Rect(Screen.width / 2 - 50, 460, 150, 150), "First to " + top + " wins!");
+      GUI.Label(new Rect(Screen.width / 2 - 140, Screen.height * 0.25f, 150, 150), "Left Player: " + PlayerOneScore);
+      GUI.Label(new Rect(Screen.width / 2 + 50, Screen.height * 0.25f, 150, 150), "Right Player: " + PlayerTwoScore);
 
       if(Score.IsOver()) {
         /* show who won */
         string msg = PlayerOneScore >= self.top ? "Left Player" : "Right Player";
-        GUI.Label(new Rect(Screen.width / 2 - 65, 300, 150, 150), "Congrats " + msg + "!");
+        GUI.Label(new Rect(Screen.width / 2 - 65, Screen.height * 0.4f, 150, 150), "Congrats " + msg + "!");
 
         /* give users a reset button */
-        if ( GUI.Button( new Rect( Screen.width / 2 - 50, 380, 100, 50 ), "Play Again!" ) ) {
+        if ( GUI.Button( new Rect( Screen.width / 2 - 50, Screen.height * 0.6f, 100, 50 ), "Play Again!" ) ) {
           PlayerOneScore = 0;
           PlayerTwoScore = 0;
           ball.SendMessage("QueueAnotherRound", 1.0f, SendMessageOptions.RequireReceiver);
@@ -86,7 +83,7 @@ public class Score : MonoBehaviour {
     }
     else {
       /* display help screen */
-      GUI.Label(new Rect(Screen.width / 2 - 150, 175, 500, 500), @"
+      GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height * 0.25f, 500, 500), @"
           HELP SCREEN
 
           LEFT PLAYER CONTROLS:
@@ -104,7 +101,7 @@ public class Score : MonoBehaviour {
           ");
 
       /* give users a reset button */
-      if ( GUI.Button( new Rect( Screen.width / 2 - 50, 425, 100, 50 ), "Begin!") ) {
+      if ( GUI.Button( new Rect( Screen.width / 2 - 50, Screen.height * 0.6f, 100, 50 ), "Begin!") ) {
         hasStarted = true;
         ball.SendMessage("QueueBegin", 1.0f, SendMessageOptions.RequireReceiver);
       }
